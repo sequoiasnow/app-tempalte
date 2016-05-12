@@ -5,9 +5,3 @@
   'abstracts/functions',
   'abstracts/mixins',
   'abstracts/helpers';
-
-
-h1 {
-  @include centered-background;
-  @extend %center-vertical;
-}
