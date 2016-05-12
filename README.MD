@@ -16,6 +16,8 @@ If you are not using git, remove the .gitignore file as well
 
 `rm .gitignore`
 
+To install dependencies for use with the project simply `npm install`.
+
 To start the file simply type `gulp build` then `gulp serve` To watch for
 changes and serve files simultaneously use `gulp`
 
