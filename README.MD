@@ -19,11 +19,13 @@ If you are not using git, remove the .gitignore file as well
 To start the file simply type `gulp build` then `gulp serve` To watch for
 changes and serve files simultaneously use `gulp`
 
-All sass files use an autoprefixer and all javascript uses es6 syntax... 
+All sass files use an autoprefixer and all javascript uses es6 syntax...
 
+```
  _____        _             _
 | ____|_ __  (_) ___  _   _| |
 |  _| | '_ \ | |/ _ \| | | | |
 | |___| | | || | (_) | |_| |_|
 |_____|_| |_|/ |\___/ \__, (_)
           |__/       |___/
+```
