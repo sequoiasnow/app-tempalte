@@ -1,0 +1,19 @@
+//
+// Vertically centers the content of the child elements. Only is intended for
+// one child.
+//
+%center-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+//
+// Horizontally centers the content of the child elements. Only is intended for
+// one child.
+//
+%center-horizontal {
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: center;
+}

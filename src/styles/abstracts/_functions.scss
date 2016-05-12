@@ -1,0 +1,24 @@
+/// Calculates rem's from pixels. Rem's are relative to the font size set for
+/// the html element.
+/// @param {Integer} $size - The size, in px's typically, to turn to rem.
+/// @return {Integer} - The rem value equivilent.
+@function calculateRem($size) {
+  @if unitless($size) {
+    @warn 'No unit provided to calculate rem, assumed px';
+    @return $size / 16rem;
+  }
+  @return $size / 16px * 1rem;
+}
+
+/// Gets a heading font from the array of heading font sizes.
+/// @param {String} $size - The key in the headings font size.
+/// @return {Integer} - The font size in px's
+/// @require $heading-font-sizes
+@function headingSize($size) {
+  $val : map-get($heading-font-sizes, $size);
+
+  @if $val {
+    @return $val;
+  }
+  @error 'The heading size `#{$size}` was not found.';
+}

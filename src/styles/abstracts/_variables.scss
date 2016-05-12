@@ -1,0 +1,166 @@
+////
+/// Variables dictates all sass vairables that are used multiple times throught
+/// a project. This allowes for more consistant overall styling but should be
+/// noted that the variables are used more than once and thus any change
+/// can have a dramatic change.
+////
+
+/// Dicates the basic colors used throught the project. Using a simple color
+/// pallete as a base. Provides a standard for colors across the site.
+/// @prop {Stirng} key - Color Name
+/// @prop {String} value - The color declaration itself
+$colors: (
+  'white': rgb(255, 255, 255),
+
+  'lightgrey': rgb(189, 195, 199),
+  'grey': rgb(149, 165, 166),
+  'darkgrey': rgb(127, 140, 141),
+
+  'lightyellow': rgb(241, 196, 15),
+  'yellow': rgb(241, 196, 15),
+  'darkyellow': rgb(241, 196, 15),
+
+  'lightorange': rgb(243, 156, 18),
+  'orange': rgb(230, 126, 34),
+  'darkorange': rgb(211, 84, 0),
+
+  'lightblue': rgb(26, 188, 156),
+  'blue': rgb(52, 152, 219),
+  'darkblue': rgb(41, 128, 185),
+
+  'lightred': rgb(231, 76, 60),
+  'red': rgb(231, 76, 60),
+  'darkred': rgb(192, 57, 43),
+
+  'lightpurple': rgb(155, 89, 182),
+  'purple': rgb(155, 89, 182),
+  'darkpurple': rgb(142, 68, 173),
+
+  'lightgreen': rgb(46, 204, 113),
+  'green': rgb(39, 174, 96),
+  'darkgreen': rgb(22, 160, 133),
+
+  'black': rgb(0, 0, 0),
+);
+
+/// Define a method for retreiving a color from the colors array.
+/// @param {String} $name - Color's Name
+/// @return {String}
+/// @require $colors
+@function color($name) {
+  @return map-get($colors, $name);
+}
+
+/// The color for default text.
+$primary-text-color: rgb(0, 0, 0);
+
+/// Color for text that stands out amoung the rest.
+$alternate-text-color: color('lightblue');
+
+/// Color for text light text on a dark background.
+$light-text-color: color('white');
+
+/// Color for text being highlighted.
+$highlight-text-color: color('lightyellow');
+
+/// Background color for highlight.
+$highlight-bgcolor: $light-text-color;
+
+/// Color for focussed text. This applies to instances of focus like hover.
+$focus-text-color: color('lightgrey');
+
+/// The color of the background of the site.
+$theme-bgcolor: rgb(255, 255, 255);
+
+/// The color for site content, where text or other elements are concerned.
+$content-bgcolor: color('white');
+
+/// The box-shadow for the content, this is used throught the site to
+/// distinuish content from not content
+$content-shadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.15)';
+
+/// Color for theme borders through the site that allow the border to easily
+/// differentiate from the background.
+$border-color: rgb(216, 219, 221);
+
+/// Determines breakpoints for the entire site.
+/// This allowes for uniform reactions to various states of responsive desing.
+/// @prop {String} key - Breakpoint Size
+/// @prop {Map} breakpoint - Breakpoint Value
+$breakpoints: (
+  'medium': (max-width: 800px),
+  'large': (max-width: 1000px),
+  'huge': (max-width: 1200px),
+);
+
+/// The standard font used for typical content.
+$content-font: ('Raleway', 'Montserrat', 'Helvetica', 'Avenir', sans-serif);
+
+/// The standard font for all headings .
+$heading-font: ('Raleway', 'Montserrat', 'Helvetica', 'Avenir', sans-serif);
+
+/// Fonts for alternate circumstances, like blockquotes or other headins.
+$alternate-font: ('EB Garamond', Georgia, serif);
+
+/// Font size for site content.
+$content-font-size: 14px;
+
+/// Font sizes for headings.
+$heading-font-sizes: (
+  'tiny': 12px,
+  'small': 16px,
+  'large': 24px,
+  'huge': 34px,
+);
+
+/// Font sizes for entry meta, all things insignificant and small.
+$meta-font-size: headingSize('tiny');
+
+/// The icons that will replace the names of links in the menu of social links.
+/// @prop {String} key - The lowercase name of the company as appears in the
+/// url.
+/// @prop {String} value - The font awesome icon equivilant.
+$social-icons: (
+  'facebook' : '\f230',
+  'github'   : '\f092',
+  'tumblr'   : '\f173',
+  'vine'     : '\f1ca',
+  'yelp'     : '\f1e9',
+  'youtube'  : '\f166',
+  'twitter'  : '\f099',
+  'vimeo'    : '\f194',
+  'slack'    : '\f198',
+  'rebel'    : '\f1d0',
+  'pinterest': '\f231',
+  'linkedin' : '\f08c',
+  'google'   : '\f0d4',
+  'instagram': '\f16d',
+);
+
+/// An identifier for the body that contains multiple posts.
+$multiple-post: ('body.search-results', 'body.archive', 'body.category');
+
+/// An identifier for a single type of post to be used for single page.
+$single-post: ('body.single', 'body.single-post', 'body.page');
+
+/// An identifier for a gap of pixels. Primary padding value.
+$padding-val: 20px;
+
+/// Show the maximum width of the page in order to set a standard for larger
+/// screens.
+$max-page-width: 1160px;
+
+/// The width of a post, this carries weight for a large number of posts,
+/// specificly single page normally formated posts.
+$post-width: 650px;
+
+/// Post width for more featured posts, or rather posts of the image format.
+$image-post-width: 720px;
+
+/// The margin by which images and quotes that are left or right alines will
+/// set out from a posts content.
+$embed-out-distance: 150px;
+
+/// The size of the sidebar shown on single page posts. This should corrolate
+/// nearly to the width of newscards.
+$sidebar-width: 300px;

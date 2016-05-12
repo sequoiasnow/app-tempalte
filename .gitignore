@@ -1,1 +1,5 @@
 node_modules
+build
+static/_.js
+static/_.js.map
+static/_.css
